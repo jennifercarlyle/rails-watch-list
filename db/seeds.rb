@@ -8,6 +8,8 @@
 
 puts "Cleaning the database..."
 Movie.destroy_all
+List.destroy_all
+Bookmark.destroy_all
 
 puts "Creating some movies..."
 
@@ -21,8 +23,14 @@ movie_results.each do |movie_hash|
   poster_url = base_url + movie_hash["poster_path"]
   rating = movie_hash["vote_average"]
   Movie.create!(title: title, overview: overview, poster_url: poster_url, rating: rating)
-  puts "Created movie"
+  puts "Created some movies"
 end
 
-puts "Finished!"
+puts "Creating some lists..."
+List.create!(name: "Watch Next")
+List.create!(name: "Favorites")
+List.create!(name: "Dads Recommendations")
+List.create!(name: "Girls Night")
+puts "Created some lists"
 
+puts "Finished!"
