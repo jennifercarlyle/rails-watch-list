@@ -26,11 +26,4 @@ movie_results.each do |movie_hash|
   puts "Created some movies"
 end
 
-puts "Creating some lists..."
-List.create!(name: "Watch Next")
-List.create!(name: "Favorites")
-List.create!(name: "Dads Recommendations")
-List.create!(name: "Girls Night")
-puts "Created some lists"
-
 puts "Finished!"
